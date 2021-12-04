@@ -1,6 +1,12 @@
 # nvjdc
 
 
+## 注意 注意注意
+
+    HUBdcoker里面有一个 nolanjdc/nvjdc 镜像不要拉 我看还有500多人拉了 起名都有所图 别的我不多说了把
+
+    我自己的docker  nolanhzy/nvjdc 认清楚
+
 ## 提示
 
 由于我自己的环境是centos x86，arm不支持
@@ -9,8 +15,36 @@
 
 不是热更新 每次修改配置需要重启容器
 
+## Windows安装教程
 
-## 安装教程
+
+# 1安装ASP.NET Core Runtime 5.0.12
+
+安装地址:https://dotnet.microsoft.com/download/dotnet/5.0
+下载之后无脑下一步
+
+# 2下载当前项目源码解压
+
+# 3删除NETJDC.deps.json
+
+
+# 4如果是windows server根据自己系统将dll复制根目录即可
+
+64位
+
+复制runtimes\win-x64\native\OpenCvSharpExtern.dll到根目录
+
+32位
+
+复制runtimes\win-x86\native\OpenCvSharpExtern.dll到根目录
+
+# 启动 
+
+ 管理员打开CMD CD到源码文件夹中  输入 dotnet NETJDC.dll --urls=http://*:5000
+
+ 后面那个是端口可以自己改
+
+## docker安装教程
 
 如果你是装过NVjdc 先看看后面1.2以前如何更新之1.2升级说明
 
@@ -46,7 +80,7 @@ mkdir -p  Config && cd Config
 ```
 
 5下载config.json 配置文件 并且修改自己的配置 不能缺少
-
+源码库已经关闭了Json 需要自行需找。
 
 ```
 wget -O Config.json  https://raw.githubusercontent.com/NolanHzy/nvjdc/main/Config.json
